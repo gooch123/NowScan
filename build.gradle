@@ -41,7 +41,7 @@ jib {
         platforms {
             platform {
                 os = "linux"
-                architecture = "amd64"
+                architecture = "arm64"
             }
         }
     }
