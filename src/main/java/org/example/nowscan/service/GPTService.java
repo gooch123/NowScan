@@ -12,9 +12,9 @@ public class GPTService {
     private final GPTRepository gptRepository;
     private final HashAdvice hashAdvice;
 
-    public GPTResponse saveResponse(String body) {
+    public GPTResponse saveResponse(String original, String translate) {
         return gptRepository.save(new GPTResponse(
-                hashAdvice.getnerateHash(body), body
+                hashAdvice.getnerateHash(original), translate
         ));
     }
 
