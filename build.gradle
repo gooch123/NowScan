@@ -58,6 +58,7 @@ jib {
                 "SPRING_PROFILES_ACTIVE": "prod",
                 "DATABASE_USERNAME": System.getenv('DATABASE_USERNAME') ?: '',
                 "DATABASE_PASSWORD": System.getenv('DATABASE_PASSWORD') ?: '',
+                "GPT_API_KEY": System.getenv('GPT_API_KEY') ?: '',
         ]
     }
 }
