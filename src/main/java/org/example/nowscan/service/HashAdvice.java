@@ -9,10 +9,15 @@ import java.security.NoSuchAlgorithmException;
 @Component
 public class HashAdvice {
 
-    // ID 생성 메서드
-    public String getnerateHash(String largeText) {
-        // 문자열의 앞 30글자를 추출
-        String textToHash = largeText.substring(0, Math.min(30, largeText.length()));
+    public String generateHash(String largeText) {
+        // 문자열의 앞 20글자 추출
+        String frontText = largeText.substring(0, Math.min(20, largeText.length()));
+
+        // 문자열의 뒷 20글자 추출
+        String backText = largeText.substring(Math.max(0, largeText.length() - 20));
+
+        // 앞 20글자와 뒷 20글자를 합침
+        String textToHash = frontText + backText;
 
         // SHA-256 해시 함수 적용
         MessageDigest digest = null;
@@ -36,5 +41,6 @@ public class HashAdvice {
         }
         return hexString.toString();
     }
+
 
 }

@@ -14,12 +14,12 @@ public class GPTService {
 
     public GPTResponse saveResponse(String original, String translate) {
         return gptRepository.save(new GPTResponse(
-                hashAdvice.getnerateHash(original), translate
+                hashAdvice.generateHash(original), translate
         ));
     }
 
     public GPTResponse findResponse(String body) {
-        return gptRepository.findById(hashAdvice.getnerateHash(body)).orElseThrow(
+        return gptRepository.findById(hashAdvice.generateHash(body)).orElseThrow(
                 RuntimeException::new);
     }
 
