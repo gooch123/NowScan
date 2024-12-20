@@ -56,4 +56,4 @@ jobs:
             docker pull gooch1744/nowscan:latest
             docker stop nowscan || true
             docker rm nowscan || true
-            docker run -d --name nowscan -p 8080:8080 -e TZ=Asia/Seoul --add-host=host.docker.internal:host-gateway gooch1744/nowscan:latest
+            docker run -d --name nowscan -p 8000:8080 -e TZ=Asia/Seoul --add-host=host.docker.internal:host-gateway gooch1744/nowscan:latest
